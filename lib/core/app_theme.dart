@@ -3,15 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:note_taker/core/app_color.dart';
 
 class AppTheme {
-  static ThemeData lightTheme = ThemeData(
+  static ThemeData darkTheme = ThemeData(
     iconButtonTheme: IconButtonThemeData(
       style: IconButton.styleFrom(
         backgroundColor: Color(0XFF3B3B3B),
-        iconSize: 18,
+        iconSize: 24,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-       minimumSize: Size(50, 50)
+        minimumSize: Size(50, 50),
       ),
     ),
     brightness: Brightness.light,
@@ -77,16 +77,16 @@ class AppTheme {
         color: Colors.black,
       ),
       titleSmall: GoogleFonts.nunito(
-        fontSize: 14,
+        fontSize: 20,
         fontWeight: FontWeight.w500,
         letterSpacing: 0.1,
-        color: Colors.black,
+        color: Colors.white,
       ),
       bodyLarge: GoogleFonts.nunito(
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
+        fontSize: 20,
+        fontWeight: FontWeight.w300,
         letterSpacing: 0.5,
-        color: Colors.black,
+        color: Colors.white,
       ),
       bodyMedium: GoogleFonts.nunito(
         fontSize: 14,
@@ -123,10 +123,11 @@ class AppTheme {
         FloatingActionButtonThemeData(
           shape: CircleBorder(),
           backgroundColor: Color(0XFF252525),
-          sizeConstraints: BoxConstraints(
-            minHeight: 70,
-            minWidth: 70,
-          ),
+          // sizeConstraints: BoxConstraints.tightFor(
+          //   height: 70,
+          //   width: 70,
+          // ),
+          elevation: 2,
         ),
   );
 }

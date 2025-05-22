@@ -28,15 +28,32 @@ class _NoteListPageState extends State<NoteListPage> {
               iconPath: AssetConstant.infoIconSvg,
               onpress: () {},
             ),
-            SizedBox(width: 16,)
+            SizedBox(width: 16),
           ],
         ),
         body: Center(
-          child: Image.asset(AssetConstant.emptyNotesImg),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(AssetConstant.emptyNotesImg),
+              Text(
+                "Create your first note !",
+                style:
+                    Theme.of(context).textTheme.titleSmall,
+              ),
+            ],
+          ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: SvgPicture.asset(AssetConstant.addIconSvg),
+        floatingActionButton: SizedBox(
+          height: 70,
+          width: 70,
+          child: FloatingActionButton(
+            onPressed: () {},
+            child: SvgPicture.asset(
+              AssetConstant.addIconSvg,
+            ),
+          ),
         ),
       ),
     );

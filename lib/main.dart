@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Notes Taker',
-      theme: AppTheme.lightTheme,
+      theme: AppTheme.darkTheme,
       home: NoteListPage(),
     );
   }
