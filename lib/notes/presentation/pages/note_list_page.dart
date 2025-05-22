@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:note_taker/core/asset_constant.dart';
+import 'package:note_taker/notes/presentation/widgets/app_button.dart';
 
 class NoteListPage extends StatefulWidget {
   const NoteListPage({super.key});
@@ -10,6 +13,32 @@ class NoteListPage extends StatefulWidget {
 class _NoteListPageState extends State<NoteListPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text("Notes"),
+          actions: [
+            AppButton(
+              iconPath: AssetConstant.searchIconSvg,
+              onpress: () {},
+            ),
+            SizedBox(width: 16),
+            AppButton(
+              iconPath: AssetConstant.infoIconSvg,
+              onpress: () {},
+            ),
+            SizedBox(width: 16,)
+          ],
+        ),
+        body: Center(
+          child: Image.asset(AssetConstant.emptyNotesImg),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: SvgPicture.asset(AssetConstant.addIconSvg),
+        ),
+      ),
+    );
   }
 }
