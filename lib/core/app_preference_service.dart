@@ -22,6 +22,9 @@ class AppPreferenceService {
         await _preferences.setBool(key, value);
       } else if (value is double) {
         await _preferences.setDouble(key, value);
+      } else if (value is List<String>) {
+        log("Saving $value as String List");
+        await _preferences.setStringList(key, value);
       } else {
         log("Unsupported type for saving preference");
       }
@@ -31,7 +34,7 @@ class AppPreferenceService {
   }
 
   T? getValue<T>(String key) {
-    try{
+    try {
       if (T == String) {
         return _preferences.getString(key) as T?;
       } else if (T == int) {
@@ -40,6 +43,9 @@ class AppPreferenceService {
         return _preferences.getBool(key) as T?;
       } else if (T == double) {
         return _preferences.getDouble(key) as T?;
+      } else if (T == List<String>) {
+        log("Getting value for key: ${_preferences.getStringList(key)} as String List");
+        return _preferences.getStringList(key) as T?;
       } else {
         log("Unsupported type for getting preference");
         return null;
@@ -57,7 +63,6 @@ class AppPreferenceService {
       log("Error removing preference: $e");
     }
   }
-
 
   Future<void> clearAll() async {
     try {
